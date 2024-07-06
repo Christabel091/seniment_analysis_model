@@ -4,7 +4,7 @@ nltk.download('stopwords')
 from nltk.tokenize import word_tokenize # type: ignore
 from nltk.corpus import stopwords # type: ignore
 import string
-import numpy as np
+import numpy as np # type: ignore
 
 def main():
     m = 8
@@ -72,9 +72,6 @@ def word_freq(pos_freq, neg_freq, file_path):
 
     return wordsDic
 
-
-import numpy as np
-
 def extract_features(words_dict):
     matrix = np.empty((0, 3))
     for count in words_dict:
@@ -111,4 +108,7 @@ def preprocess(text):
 if __name__ == "__main__":
     main()
 
-#this files the neccessary functions.
+#this files has the neccessary functions.
+#that are distant from the model
+#has function for creating word dictionary
+#word frequency and more.
