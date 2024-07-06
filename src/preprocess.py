@@ -18,9 +18,9 @@ def main():
     neg_freqs = build_freq(file_path_negative)
     # print("The negative frquency")
     # print(neg_freqs)
-    word = ["i", "love", "my", "little","sister", "and", "she", "is","fantastic"]
     word_f = word_freq(pos_freqs, neg_freqs, "../data/sample_sentiment_text.txt")
     #print("The frequency of the sentences ares ", word_f)
+    matrix = extract_features(word_f)
     
 
 
@@ -110,3 +110,5 @@ def preprocess(text):
 
 if __name__ == "__main__":
     main()
+
+#this files the neccessary functions.
