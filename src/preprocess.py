@@ -17,10 +17,11 @@ def main():
     # print(pos_freqs)
     neg_freqs = build_freq(file_path_negative)
     # print("The negative frquency")
-    # print(neg_freqs)
+    print(neg_freqs)
     word_f = word_freq(pos_freqs, neg_freqs, "../data/sample_sentiment_text.txt")
-    #print("The frequency of the sentences ares ", word_f)
+    print("The frequency of the sentences ares ", word_f)
     matrix = extract_features(word_f)
+    print("The matrix is ", matrix)
     
 
 
@@ -47,10 +48,8 @@ def process_file(file_path, freqs):
             line = file.readline()
 
 def word_freq(pos_freq, neg_freq, file_path):
-
     wordsDic = {}
     count = 0
-
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
             words = preprocess(line)
@@ -71,7 +70,6 @@ def word_freq(pos_freq, neg_freq, file_path):
             count += 1
 
     return wordsDic
-
 def extract_features(words_dict):
     matrix = np.empty((0, 3))
     for count in words_dict:
